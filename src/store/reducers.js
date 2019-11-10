@@ -6,7 +6,8 @@ import {
   DATA_EMPTY,
   DATA_SUCCESS,
   DATA_NOT_FOUND,
-  CHANGE_CURRENT_PAGE
+  CHANGE_CURRENT_PAGE,
+  RESET_CURRENT_PAGE
 } from './actions';
 
 const defaultState = {
@@ -45,6 +46,11 @@ const contentReduser = (state = defaultState, action) => {
       return {
         ...state,
         currentPage: action.payload
+      };
+    case RESET_CURRENT_PAGE:
+      return {
+        ...state,
+        currentPage: defaultState.currentPage
       };
     default:
       return state;

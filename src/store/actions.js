@@ -7,6 +7,7 @@ export const DATA_NOT_FOUND = 'DATA_NOT_FOUND';
 export const DATA_ERROR = 'DATA_ERROR';
 
 export const CHANGE_CURRENT_PAGE = 'CHANGE_CURRENT_PAGE';
+export const RESET_CURRENT_PAGE = 'RESET_CURRENT_PAGE';
 
 export const setCurrentPage = (value) => ({
   type: CHANGE_CURRENT_PAGE,
@@ -15,6 +16,7 @@ export const setCurrentPage = (value) => ({
 
 export const getData = async (dispatch, value, loadData) => {
   dispatch({ type: DATA_EMPTY, payload: true }); // clear results
+  dispatch({ type: RESET_CURRENT_PAGE });
   dispatch({ type: LOAD_DATA, payload: true });
   try {
     const cities = await loadData(value);
