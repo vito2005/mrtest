@@ -1,0 +1,22 @@
+ul.pagination {
+    display: inline-flex;
+    max-width: 600px;
+    flex-wrap: wrap;
+}
+
+li.page-item {
+    cursor: pointer;
+    list-style: none;
+    margin: 3px;
+    display: flex;
+    vertical-align: top;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-size: 15px;
+    border: 2px solid #005ff9;
+    text-decoration: none;
+    border-radius: 4px;
+}

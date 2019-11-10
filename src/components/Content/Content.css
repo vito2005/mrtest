@@ -1,0 +1,24 @@
+.loading-spinner {
+    margin-top: 20px;
+}
+
+.no-result {
+    text-align: center;
+    color: #ff0000
+}
+.results {
+    text-align: left;
+    border-top: 1px solid #e5e5e5;
+    box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.1);
+    margin-top: 17px
+}
+.results ul {
+    list-style-type: none;
+}
+.results-item h3 {
+    margin-bottom: 10px;
+}
+.results-item-content {
+    overflow: hidden;
+    line-height: 14px;
+}

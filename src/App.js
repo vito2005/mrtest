@@ -1,25 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
+import Autocomplete from './components/Autocomplete/Autocomplete';
+import Content from './components/Content/Content';
+
+import rootReducer from './store/reducers';
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <div className="App-Component">
+          <div className="title">
+            <h1>Найди места где спрятан клад!</h1>
+            <h3>(english names)</h3>
+          </div>
+          <Autocomplete/>
+          <Content/>
+        </div>
+      </div>
+    </Provider>
   );
 }
 
