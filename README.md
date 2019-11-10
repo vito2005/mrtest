@@ -1,4 +1,5 @@
 This is proto of searching interface.
+The searching data has just english names.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
