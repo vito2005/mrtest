@@ -5,15 +5,12 @@ import Pagination from '../Pagination/Pagination';
 import { setCurrentPage } from '../../store/actions';
 
 class Results extends React.Component {
-  renderNoResultsMessage() {
-    const { results, noResultsMessage } = this.props;
-    if (results && !results.length && noResultsMessage) {
-      return (<div className="no-result">
+  renderNoResultsMessage(noResultsMessage) {
+    return (<div className="no-result">
         <h3>
           {noResultsMessage}
         </h3>
       </div>);
-    }
   }
 
   renderResults(currentResults) {
@@ -40,7 +37,7 @@ class Results extends React.Component {
 
   render() {
     const {
-      results, currentPage, resultsPerPage, setCurrentPage
+      results, currentPage, resultsPerPage, setCurrentPage, noResultsMessage
     } = this.props;
     const lastResultIndex = currentPage * resultsPerPage;
     const firsResultIndex = lastResultIndex - resultsPerPage;
@@ -51,8 +48,10 @@ class Results extends React.Component {
     if (this.props.loading) {
       return (<div className="loading-spinner">...loading</div>);
     }
+    if (results && !results.length && noResultsMessage) {
+      return this.renderNoResultsMessage(noResultsMessage);
+    }
     return (<div className="results">
-      {this.renderNoResultsMessage()}
       {this.renderResults(currentResults)}
       <Pagination resutsPerPage={resultsPerPage}
                   totalResults={results && results.length}
