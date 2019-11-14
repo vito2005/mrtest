@@ -39,6 +39,7 @@ class Autocomplete extends React.Component {
       if (index === -1 || !index) {
         index = this.props.suggestions.length;
       }
+      // eslint-disable-next-line no-plusplus
       this.markSuggestion(--index);
       setSearchText(suggestions[index].name);
     }
@@ -47,6 +48,7 @@ class Autocomplete extends React.Component {
       if (index === suggestions.length - 1) {
         index = -1;
       }
+      // eslint-disable-next-line no-plusplus
       this.markSuggestion(++index);
       setSearchText(suggestions[index].name);
     }
