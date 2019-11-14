@@ -4,6 +4,8 @@ export const CHANGE_SEARCH_TEXT = 'CHANGE_SEARCH_TEXT';
 export const SHOW_SUGGESTIONS = 'SHOW_SUGGESTIONS';
 export const HIDE_SUGGESTIONS = 'HIDE_SUGGESTIONS';
 export const SELECT_SUGGESTION = 'SELECT_SUGGESTION';
+export const SET_ACTIVE_SUGGESTION = 'SET_ACTIVE_SUGGESTION';
+export const CLEAR_ACTIVE_SUGGESTION = 'CLEAR_ACTIVE_SUGGESTION';
 
 export const setSearchText = (value) => ({
   type: CHANGE_SEARCH_TEXT,
@@ -24,6 +26,14 @@ export const selectSuggestions = (value) => ({
   payload: value
 });
 
+export const setActiveSuggestion = (index) => ({
+  type: SET_ACTIVE_SUGGESTION,
+  index
+});
+export const clearActiveSuggestion = () => ({
+  type: CLEAR_ACTIVE_SUGGESTION
+});
+
 export const getSuggestions = async (dispatch, value, loadSuggestions) => {
   try {
     const cities = await loadSuggestions(value);
@@ -33,7 +43,7 @@ export const getSuggestions = async (dispatch, value, loadSuggestions) => {
     else {
       dispatch({
         type: SHOW_SUGGESTIONS,
-        payload: cities
+        payload: cities.map((c) => ({ ...c, active: !!c.active }))
       });
     }
   } catch (error) {

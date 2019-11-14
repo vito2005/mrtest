@@ -9,7 +9,7 @@ export const loadData = (searchValue) => new Promise((resolve) => {
 
 export const loadSuggestions = (value) => new Promise((resolve) => {
   const regex = new RegExp(`^${value}`, 'i');
-  const suggestions = data.filter((c) => regex.test(c.name)).map((c) => c.name);
+  const suggestions = data.filter((c) => regex.test(c.name)).map((c) => ({ name: c.name, id: c.id }));
   suggestions.sort().splice(10, suggestions.length);
   setTimeout(() => resolve(suggestions), 300);
 });
