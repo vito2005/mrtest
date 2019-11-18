@@ -2,7 +2,7 @@ import React from 'react';
 import './Content.css';
 import { connect } from 'react-redux';
 import Pagination from '../Pagination/Pagination';
-import { setCurrentPage } from '../../store/actions';
+import { setCurrentPage } from '../../store/content/actions';
 
 class Results extends React.Component {
   renderNoResultsMessage(noResultsMessage) {

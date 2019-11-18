@@ -1,4 +1,4 @@
-import { loadData } from '../api';
+import { loadData } from '../../api/index';
 
 export const LOAD_DATA = 'LOAD_DATA';
 export const DATA_EMPTY = 'DATA_EMPTY';

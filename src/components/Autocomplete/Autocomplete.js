@@ -6,7 +6,7 @@ import {
   hideSuggestions, getSuggestionsInjector,
   setActiveSuggestion, clearActiveSuggestion
 } from '../../store/autocomplete/actions';
-import { getDataInjector } from '../../store/actions';
+import { getDataInjector } from '../../store/content/actions';
 
 
 class Autocomplete extends React.Component {
@@ -83,7 +83,7 @@ class Autocomplete extends React.Component {
     }
     return (
       <ul>
-        {suggestions.map((item, i) => <li className={item.active && 'active'} key={i} onMouseOver={() => this.markSuggestion(i)} onClick={() => this.search(item.name)}>
+        {suggestions.map((item, i) => <li className={item.active ? 'active' : null} key={i} onMouseOver={() => this.markSuggestion(i)} onClick={() => this.search(item.name)}>
           {item.name}
         </li>)}
       </ul>
