@@ -68,7 +68,7 @@ class Autocomplete extends React.Component {
     const {
       hideSuggestions, setSearchText, getDataInjector, suggestions
     } = this.props;
-    if (suggestions.length) {
+    if (suggestions && suggestions.length) {
       hideSuggestions();
     }
     setSearchText(value);
