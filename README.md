@@ -1,7 +1,22 @@
-This is proto of searching interface.
-The searching data has just english names.
+## Тестовое задание от mail.ru group.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Реализовать на реакте интерфейс быстрого поиска. Состоит из двух частей.
+1. Верхняя панель: поисковая строка с инпутом. В процессе ввода букв запроса, появляются и конкретизируются саджесты под инпутом и результаты.
+2. Результаты: список из 10 результатов + пагинация (параметры в урл добавлять не требуется).
+
+
+Быстрый поиск означает, что результаты обновляются в процессе ввода запроса в поисковую строку. Для хранения минимального состояния приложения (текущая страница пагинации, текущий запрос) нужно использовать redux. Бэкенд не нужен (все моки данных можно хранить прямо в json-файле, читать прямо оттуда), дизайн не требуется.
+
+Важно продемонстрировать умение декомпозировать интерфейс на компоненты, давать им понятные имена.
+
+## Кратокое описание
+
+- json - массив городов с адресами и координатами
+- поиск в json по началу названия города
+- данные забираю через промисы и сет таймаут
+- компоненты : 1. компонент автокомплит для suggestions; 2. компонент контент для результатов; 3. пагинация внутри контента
+- два асинхронных экшн в редакс для запроса suggestions и результатов
+- пагинация на клиенте
 
 ## Available Scripts
 
@@ -14,58 +29,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
